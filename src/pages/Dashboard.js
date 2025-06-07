@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -289,9 +289,9 @@ function Dashboard() {
               © 2025 Project Dashboard. Manage your hosted projects efficiently.
             </div>
             <div className="flex space-x-6 text-sm text-gray-600">
-              <a href="#" className="hover:text-gray-900">Add Project</a>
-              <a href="#" className="hover:text-gray-900">Documentation</a>
-              <a href="#" className="hover:text-gray-900">Support</a>
+              <a href="#!" className="hover:text-gray-900">Add Project</a>
+              <a href="#!" className="hover:text-gray-900">Documentation</a>
+              <a href="#!" className="hover:text-gray-900">Support</a>
             </div>
           </div>
         </div>

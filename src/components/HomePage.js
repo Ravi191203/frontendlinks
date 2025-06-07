@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export default function HomePage() {
-  const [setActiveFeature] = useState(0);
+  const [a,setActiveFeature] = useState(0);
 
   const features = [
     {

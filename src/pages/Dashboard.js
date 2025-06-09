@@ -19,7 +19,7 @@ function Dashboard() {
     },
     { 
       name: "Blog", 
-      url: "https://your-blog-site.com",
+      url: "https://dev-tools-black.vercel.app/",
       description: "Personal blog with articles and insights",
       category: "Blog",
       status: "Live",

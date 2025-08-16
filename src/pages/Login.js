@@ -18,6 +18,7 @@ function Login() {
     
     try {
       const res = await axios.post("https://backend-w3tr.onrender.com/api/auth/login", form);
+      // const res = await axios.post("http://localhost:5000/api/auth/login", form);
       localStorage.setItem("token", res.data.token);
       toast.success("Login successful!");
       navigate("/dashboard");

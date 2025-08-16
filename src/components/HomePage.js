@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export default function HomePage() {
-  const [a,setActiveFeature] = useState(0);
+  const [activeFeature, setActiveFeature] = useState(0);
 
   const features = [
     {
@@ -44,8 +44,6 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-
-
       {/* Hero Section */}
       <section id="home" className="pt-8 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -95,10 +93,14 @@ export default function HomePage() {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="group p-8 rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-200 hover:shadow-xl hover:border-purple-200 transition-all duration-300 cursor-pointer"
+                className={`group p-8 rounded-2xl border transition-all duration-300 cursor-pointer 
+                  ${activeFeature === index 
+                    ? "bg-gradient-to-br from-purple-50 to-white border-purple-400 shadow-xl" 
+                    : "bg-gradient-to-br from-gray-50 to-white border-gray-200 hover:shadow-xl hover:border-purple-200"}`}
                 onMouseEnter={() => setActiveFeature(index)}
               >
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-200">
+                <div className={`text-4xl mb-4 transition-transform duration-200 
+                  ${activeFeature === index ? "scale-110" : "group-hover:scale-110"}`}>
                   {feature.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
@@ -215,31 +217,35 @@ export default function HomePage() {
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#!" className="hover:text-white transition-colors">Features</a></li>
                 <li><a href="#!" className="hover:text-white transition-colors">Pricing</a></li>
+                <li><a href="#!" className="hover:text-white transition-colors">Documentation</a></li>
                 <li><a href="#!" className="hover:text-white transition-colors">API</a></li>
               </ul>
             </div>
             <div>
               <h3 className="font-semibold mb-4">Company</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#!" className="hover:text-white transition-colors">About</a></li>
-                <li><a href="#!" className="hover:text-white transition-colors">Blog</a></li>
+                <li><a href="#!" className="hover:text-white transition-colors">About Us</a></li>
                 <li><a href="#!" className="hover:text-white transition-colors">Careers</a></li>
+                <li><a href="#!" className="hover:text-white transition-colors">Blog</a></li>
+                <li><a href="#!" className="hover:text-white transition-colors">Press</a></li>
               </ul>
             </div>
             <div>
               <h3 className="font-semibold mb-4">Support</h3>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#!" className="hover:text-white transition-colors">Help Center</a></li>
-                <li><a href="#!" className="hover:text-white transition-colors">Contact</a></li>
-                <li><a href="#!" className="hover:text-white transition-colors">Status</a></li>
+                <li><a href="#!" className="hover:text-white transition-colors">Terms of Service</a></li>
+                <li><a href="#!" className="hover:text-white transition-colors">Privacy Policy</a></li>
+                <li><a href="#!" className="hover:text-white transition-colors">Contact Us</a></li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 rrgs_dev. All rights reserved.</p>
+          <div className="mt-12 text-center text-gray-500 text-sm">
+            &copy; {new Date().getFullYear()} Nexus. All rights reserved.
           </div>
         </div>
       </footer>
     </div>
   );
-}
+    }
+        
